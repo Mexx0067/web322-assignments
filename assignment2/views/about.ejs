@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dim">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me - Climate Solutions</title>
+  <link href="/css/main.css" rel="stylesheet">
+</head>
+<body class="bg-base-300">
+  <%- include('partials/navbar') %>
+
+  <div class="container mx-auto p-6">
+    <div class="hero min-h-screen">
+      <div class="hero-content flex-col lg:flex-row items-center text-center lg:text-left">
+
+        <!-- Profile Photo -->
+        <img src="/images/mehroj.jpg" alt="Mehroj Tursunov" class="w-64 h-64 rounded-full shadow-2xl object-cover mb-8 lg:mb-0 lg:mr-12">
+
+        <div class="max-w-2xl">
+          <h1 class="text-5xl font-bold text-primary mb-8">About Me</h1>
+
+          <!-- Info Table -->
+          <div class="overflow-x-auto">
+            <table class="table table-zebra w-full max-w-lg mx-auto lg:mx-0">
+              <tbody>
+                <tr>
+                  <td class="font-semibold">Full Name</td>
+                  <td>Mehroj Tursunov</td>
+                </tr>
+                <tr>
+                  <td class="font-semibold">Seneca Student ID</td>
+                  <td>123839243</td>
+                </tr>
+                <tr>
+                  <td class="font-semibold">Seneca Email</td>
+                  <td>
+                    <a href="mailto:mtursunov2@senecapolytechnic.ca" class="link link-primary">
+                      mtursunov2@senecapolytechnic.ca
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="font-semibold">About Me</td>
+                  <td>
+                    I am a Seneca Polytechnic student studying Computer Programming.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="mt-8">
+            <a href="/" class="btn btn-outline btn-lg">Back to Home</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

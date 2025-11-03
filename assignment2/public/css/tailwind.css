@@ -1,0 +1,9 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@plugin "daisyui";
+
+@theme {
+  --color-primary: theme('colors.blue.500');
+}
+
+@config "../../daisyui.config.js";

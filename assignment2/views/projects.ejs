@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dim">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Climate Solutions</title>
+    <link href="/css/main.css" rel="stylesheet">
+</head>
+<body>
+     <%- include('partials/navbar.ejs') %>
+    <div class="container mx-auto p-4">
+        <div class="hero bg-base-200 p-8 rounded-lg">
+            <div class="hero-content text-center">
+                <div>
+                    <h1 class="text-4xl font-bold">Projects</h1>
+                    <p class="py-6">Explore projects by sector:</p>
+                    <div class="flex gap-2 justify-center">
+                        <a href="/solutions/projects?sector=Agriculture" class="btn btn-outline">Agriculture</a>
+                        <a href="/solutions/projects?sector=Industry" class="btn btn-outline">Industry</a>
+                        <a href="/solutions/projects?sector=Transportation" class="btn btn-outline">Transportation</a>
+                        <a href="/solutions/projects?sector=Energy" class="btn btn-outline">Energy</a>
+                        <a href="/solutions/projects?sector=Buildings" class="btn btn-outline">Buildings</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-8">
+            <table class="table w-full">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Sector</th>
+                        <th>Summary</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% projects.forEach(project => { %>
+                        <tr>
+                            <td><%= project.title %></td>
+                            <td><a href="/solutions/projects?sector=<%= project.sector %>" class="btn btn-sm btn-primary"><%= project.sector %></a></td>
+                            <td><%= project.summary_short %></td>
+                            <td><a href="/solutions/projects/<%= project.id %>" class="btn btn-sm btn-primary">Details</a></td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
