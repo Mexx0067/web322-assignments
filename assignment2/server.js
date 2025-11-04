@@ -6,9 +6,9 @@
 * 
 *  https://www.senecapolytechnic.ca/about/policies/academic-integrity-policy.html
 * 
-*  Name: Your Name Student ID: Your ID Date: October 27, 2025
+*  Name: Mehroj Tursunov Student ID: 123839243 Date: November 4, 2025
 *
-*  Published URL: https://your-project.vercel.app
+*  Published URL: https://web322-a2-1r1z52con-mehrojs-projects-7ba0e59a.vercel.app/
 ********************************************************************************/
 
 const express = require('express');
