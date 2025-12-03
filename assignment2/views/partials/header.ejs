@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Climate Solutions | <%= typeof title !== 'undefined' ? title : 'Home' %></title>
+  
+  <!-- Tailwind Output CSS -->
+  <link rel="stylesheet" href="/css/main.css" />
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900 min-h-screen flex flex-col">
+
+  <!-- NAVBAR -->
+  <nav class="bg-white border-b border-gray-200 shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        
+        <!-- Logo -->
+        <div class="flex-shrink-0">
+          <a href="/" class="text-3xl font-black text-primary hover:text-primary/90 transition">
+            Climate Solutions
+          </a>
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="/about" class="text-lg font-medium hover:text-primary transition">About</a>
+          
+          <!-- Sector Dropdown -->
+          <div class="relative group">
+            <button class="text-lg font-medium hover:text-primary transition flex items-center gap-1">
+              Sector
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            
+            <!-- Dropdown Menu -->
+            <div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              <div class="py-2">
+                <a href="/solutions/projects?sector=Land" class="block px-5 py-3 hover:bg-primary hover:text-white transition">Land Sinks</a>
+                <a href="/solutions/projects?sector=Industry" class="block px-5 py-3 hover:bg-primary hover:text-white transition">Industry</a>
+                <a href="/solutions/projects?sector=Transportation" class="block px-5 py-3 hover:bg-primary hover:text-white transition">Transportation</a>
+                <a href="/solutions/projects?sector=Electricity" class="block px-5 py-3 hover:bg-primary hover:text-white transition">Electricity</a>
+                <a href="/solutions/projects?sector=Food" class="block px-5 py-3 hover:bg-primary hover:text-white transition">Food & Agriculture</a>
+                <div class="border-t border-gray-200 my-2"></div>
+                <a href="/solutions/projects" class="block px-5 py-3 font-bold hover:bg-primary hover:text-white transition">View All Projects</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Login / Logout -->
+          <% if (!session?.user) { %>
+            <a href="/login" class="px-6 py-2.5 bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition shadow">
+              Log In
+            </a>
+          <% } else { %>
+            <a href="/logout" class="px-6 py-2.5 bg-red-600 text-white font-bold rounded-lg hover:bg-red-700 transition shadow">
+              Log Out (<%= session.user.userName %>)
+            </a>
+          <% } %>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+          <button id="mobile-menu-btn" class="text-gray-700 hover:text-primary focus:outline-none">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu (Hidden by default) -->
+    <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200">
+      <div class="px-4 py-4 space-y space-y-3">
+        <a href="/about" class="block py-2 text-lg font-medium hover:text-primary">About</a>
+        <a href="/solutions/projects?sector=Land" class="block py-2 text-lg hover:text-primary">Land Sinks</a>
+        <a href="/solutions/projects?sector=Industry" class="block py-2 text-lg hover:text-primary">Industry</a>
+        <a href="/solutions/projects?sector=Transportation" class="block py-2 text-lg hover:text-primary">Transportation</a>
+        <a href="/solutions/projects?sector=Electricity" class="block py-2 text-lg hover:text-primary">Electricity</a>
+        <a href="/solutions/projects?sector=Food" class="block py-2 text-lg hover:text-primary">Food & Agriculture</a>
+        <a href="/solutions/projects" class="block py-3 font-bold text-primary border-t pt-4">View All Projects</a>
+        
+        <% if (!session?.user) { %>
+          <a href="/login" class="block w-full text-center py-3 bg-primary text-white font-bold rounded-lg">Log In</a>
+        <% } else { %>
+          <a href="/logout" class="block w-full text-center py-3 bg-red-600 text-white font-bold rounded-lg">
+            Log Out (<%= session.user.userName %>)
+          </a>
+        <% } %>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-1">
+    <script>
+      // Simple mobile menu toggle
+      document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+      });
+    </script>

@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "Abandoned Farmland Restoration",
+    "sector_id": 1,
+    "summary_short": "Restores degraded farmland to sequester carbon.",
+    "feature_img_url": "/images/farm.jpg",
+    "intro_short": "This project restores abandoned farmland to enhance soil carbon storage and biodiversity.",
+    "impact": "Sequestered 500,000 tons of CO₂ annually across 10,000 hectares.",
+    "original_source_url": "https://example.com/farmland"
+  },
+  {
+    "id": 2,
+    "title": "Alternative Cement",
+    "sector_id": 2,
+    "summary_short": "Low-carbon cement alternative.",
+    "feature_img_url": "/images/cement.jpg",
+    "intro_short": "Replaces traditional cement with a geopolymer that reduces CO₂ emissions by 80%.",
+    "impact": "Avoids 1 million tons of CO₂ per year in production.",
+    "original_source_url": "https://example.com/cement"
+  },
+  {
+    "id": 3,
+    "title": "Electric Bus Fleet",
+    "sector_id": 3,
+    "summary_short": "Electrifying urban bus networks.",
+    "feature_img_url": "/images/bamboo.jpg",
+    "intro_short": "Replacing diesel buses with electric ones in major cities.",
+    "impact": "Reduces urban air pollution and saves 50,000 tons of CO₂ yearly.",
+    "original_source_url": "https://example.com/bus"
+  }
+]
